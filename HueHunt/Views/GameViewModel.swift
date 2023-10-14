@@ -17,35 +17,38 @@ class GameViewModel: ObservableObject {
     @Published var columns = Array(repeating: GridItem(.fixed(75), spacing: 2), count: 4)
     @Published var difficulty: GameDifficulty = .easy
     @Published var colors: [Color] = []
-    @Published var correctGuess: Bool = false
+    @Published var selectedIndex: Int? = nil
     
-    private var correctIndices = (0, 0)
+    private var correctIndices: [Int] = []
     
     init() {
         generateColors()
     }
     
     func isCorrect(_ index: Int) -> Bool {
-        index == correctIndices.0 || index == correctIndices.1
+        colors.filter { $0 == colors[index] }.count > 1
     }
     
     func generateColors(difficulty: GameDifficulty = .easy) {
-        let baseColor = Color(red: .random(in: 0...0.2), green: .random(in: 0...0.2), blue: .random(in: 0...0.2))
+        selectedIndex = nil
+        correctIndices = []
+        
+        let baseColor = Color(red: .random(in: 0...0.1), green: .random(in: 0...0.1), blue: .random(in: 0...0.1))
         var colorSet = Set<Color>()
         var step = 0.0
         var randomIndices = (0, 0)
         var stepValue: CGFloat {
             switch difficulty {
-            case .easy: return 0.04
-            case .medium: return 0.03
+            case .easy: return 0.05
+            case .medium: return 0.04
             case .hard: return 0.01
             }
         }
         
         while colorSet.count < 16 {
-            let tempColor = Color(red: baseColor.components.red + step + CGFloat.random(in: 0...0.1),
-                                  green: baseColor.components.green + step + CGFloat.random(in: 0...0.1),
-                                  blue: baseColor.components.blue + step + CGFloat.random(in: 0...0.1)
+            let tempColor = Color(red: baseColor.components.red + step,
+                                  green: baseColor.components.green + step,
+                                  blue: baseColor.components.blue + step
             )
             
             step += stepValue
@@ -59,18 +62,28 @@ class GameViewModel: ObservableObject {
         
         colors = Array(colorSet)
         colors[randomIndices.0] = colors[randomIndices.1]
-        correctIndices = randomIndices
-        correctGuess = false
+        
+        correctIndices.append(randomIndices.0)
+        correctIndices.append(randomIndices.1)
+    }
+    
+    func mark(for index: Int) -> CheckmarkType {
+        guard let selectedIndex, selectedIndex == index else { return .none }
+        
+        if isCorrect(selectedIndex) {
+            return .checkmark
+        }
+        
+        return .xmark
     }
     
     func handleUserInput(_ index: Int) {
-        correctGuess = (index == correctIndices.0 || index == correctIndices.1)
+        selectedIndex = index
         
-        print(correctIndices)
-        if index == correctIndices.0 || index == correctIndices.1 {
-            print("YES!")
-        } else {
-            print("NO!")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+            withAnimation(.smooth(duration: 0.75)) {
+                self.generateColors()
+            }
         }
     }
 }
