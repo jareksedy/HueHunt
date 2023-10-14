@@ -11,7 +11,8 @@ import SwiftUI
 struct HueHuntApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GameView()
+                .preferredColorScheme(.light)
         }
     }
 }
