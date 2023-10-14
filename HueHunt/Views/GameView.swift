@@ -12,7 +12,7 @@ struct GameView: View {
     var body: some View {
         NavigationStack {
             LazyVGrid(columns: viewModel.columns, spacing: 2) {
-                ForEach(0...15, id: \.self) { index in
+                ForEach(0...Config.cells - 1, id: \.self) { index in
                     Button("") {
                         withAnimation(.bouncy(duration: 0.2)) {
                             viewModel.handleUserInput(index)
@@ -22,6 +22,7 @@ struct GameView: View {
                                                   mark: viewModel.marks[index]))
                 }
             }
+            .padding(14)
             .navigationTitle("HueHunt")
             .navigationBarTitleDisplayMode(.inline)
         }

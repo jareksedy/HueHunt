@@ -14,10 +14,10 @@ enum GameDifficulty: Int {
 }
 
 class GameViewModel: ObservableObject {
-    @Published var columns = Array(repeating: GridItem(.fixed(75), spacing: 2), count: 4)
+    @Published var columns = Array(repeating: GridItem(.flexible(minimum: 75), spacing: 2), count: Config.columns)
     @Published var difficulty: GameDifficulty = .easy
     @Published var colors: [Color] = []
-    @Published var marks: [MarkType] = Array(repeating: .none, count: 16)
+    @Published var marks: [MarkType] = Array(repeating: .none, count: Config.cells)
 
     private var randomIndices = (0, 0)
     
@@ -31,7 +31,7 @@ class GameViewModel: ObservableObject {
     
     func generateColors(difficulty: GameDifficulty = .easy) {
         randomIndices = (0, 0)
-        marks = Array(repeating: .none, count: 16)
+        marks = Array(repeating: .none, count: Config.cells)
         
         let baseColor = Color(red: .random(in: 0...0.05), green: .random(in: 0...0.05), blue: .random(in: 0...0.05))
         var colorSet = Set<Color>()
@@ -44,7 +44,7 @@ class GameViewModel: ObservableObject {
             }
         }
         
-        while colorSet.count < 16 {
+        while colorSet.count < Config.cells {
             let tempColor = Color(red: baseColor.components.red + step + .random(in: 0...0.4),
                                   green: baseColor.components.green + step + .random(in: 0...0.4),
                                   blue: baseColor.components.blue + step + .random(in: 0...0.4)
@@ -55,8 +55,8 @@ class GameViewModel: ObservableObject {
         }
         
         while randomIndices.0 == randomIndices.1 {
-            randomIndices.0 = .random(in: 0...15)
-            randomIndices.1 = .random(in: 0...15)
+            randomIndices.0 = .random(in: 0...Config.cells - 1)
+            randomIndices.1 = .random(in: 0...Config.cells - 1)
         }
         
         colors = Array(colorSet)

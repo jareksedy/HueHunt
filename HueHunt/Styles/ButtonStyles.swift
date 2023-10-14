@@ -13,9 +13,13 @@ struct ColorButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .frame(width: 75, height: 75)
+            .scaledToFill()
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            .aspectRatio(1, contentMode: .fill)
             .background(color)
             .clipShape(RoundedRectangle(cornerRadius: configuration.isPressed ? 24 : 12))
+            //.id(UUID())
+            //.transition(.scale(scale: 0.5).combined(with: .opacity))
             .scaleEffect(configuration.isPressed ? 0.75 : 1)
             .overlay(mark == .checkmark ? Image(systemName: "checkmark").markOverlay() : nil)
             .overlay(mark == .xmark ? Image(systemName: "xmark").markOverlay() : nil)
