@@ -17,9 +17,9 @@ class GameViewModel: ObservableObject {
     @Published var columns = Array(repeating: GridItem(.fixed(75), spacing: 2), count: 4)
     @Published var difficulty: GameDifficulty = .easy
     @Published var colors: [Color] = []
-    @Published var selectedIndex: Int? = nil
-    
-    private var correctIndices: [Int] = []
+    @Published var marks: [MarkType] = Array(repeating: .none, count: 16)
+
+    private var randomIndices = (0, 0)
     
     init() {
         generateColors()
@@ -30,25 +30,24 @@ class GameViewModel: ObservableObject {
     }
     
     func generateColors(difficulty: GameDifficulty = .easy) {
-        selectedIndex = nil
-        correctIndices = []
+        randomIndices = (0, 0)
+        marks = Array(repeating: .none, count: 16)
         
-        let baseColor = Color(red: .random(in: 0...0.1), green: .random(in: 0...0.1), blue: .random(in: 0...0.1))
+        let baseColor = Color(red: .random(in: 0...0.05), green: .random(in: 0...0.05), blue: .random(in: 0...0.05))
         var colorSet = Set<Color>()
         var step = 0.0
-        var randomIndices = (0, 0)
         var stepValue: CGFloat {
             switch difficulty {
-            case .easy: return 0.05
-            case .medium: return 0.04
-            case .hard: return 0.01
+            case .easy: return 0.04
+            case .medium: return 0.03
+            case .hard: return 0.02
             }
         }
         
         while colorSet.count < 16 {
-            let tempColor = Color(red: baseColor.components.red + step,
-                                  green: baseColor.components.green + step,
-                                  blue: baseColor.components.blue + step
+            let tempColor = Color(red: baseColor.components.red + step + .random(in: 0...0.4),
+                                  green: baseColor.components.green + step + .random(in: 0...0.4),
+                                  blue: baseColor.components.blue + step + .random(in: 0...0.4)
             )
             
             step += stepValue
@@ -62,28 +61,22 @@ class GameViewModel: ObservableObject {
         
         colors = Array(colorSet)
         colors[randomIndices.0] = colors[randomIndices.1]
-        
-        correctIndices.append(randomIndices.0)
-        correctIndices.append(randomIndices.1)
-    }
-    
-    func mark(for index: Int) -> CheckmarkType {
-        guard let selectedIndex, selectedIndex == index else { return .none }
-        
-        if isCorrect(selectedIndex) {
-            return .checkmark
-        }
-        
-        return .xmark
     }
     
     func handleUserInput(_ index: Int) {
-        selectedIndex = index
+        marks[randomIndices.0] = .checkmark
+        marks[randomIndices.1] = .checkmark
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
-            withAnimation(.smooth(duration: 0.75)) {
-                self.generateColors()
-            }
+        if !isCorrect(index) {
+            marks[index] = .xmark
         }
+        
+        //if isCorrect(index) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+                withAnimation(.smooth(duration: 1)) {
+                    self.generateColors()
+                }
+            }
+        //}
     }
 }

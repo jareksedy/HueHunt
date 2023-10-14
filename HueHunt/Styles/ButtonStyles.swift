@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ColorButtonStyle: ButtonStyle {
     var color: Color
-    var mark: CheckmarkType
+    var mark: MarkType
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -17,22 +17,25 @@ struct ColorButtonStyle: ButtonStyle {
             .background(color)
             .clipShape(RoundedRectangle(cornerRadius: configuration.isPressed ? 24 : 12))
             .scaleEffect(configuration.isPressed ? 0.75 : 1)
-            .overlay(mark == .checkmark ? Image(systemName: "checkmark")
-                .resizable()
-                .foregroundColor(.white)
-                .transition(.scale)
-                .frame(width: 25, height: 25) : nil)
-            .overlay(mark == .xmark ? Image(systemName: "xmark")
-                .resizable()
-                .foregroundColor(.white)
-                .transition(.scale)
-                .frame(width: 25, height: 25) : nil)
-            
+            .overlay(mark == .checkmark ? Image(systemName: "checkmark").markOverlay() : nil)
+            .overlay(mark == .xmark ? Image(systemName: "xmark").markOverlay() : nil)
+        
     }
 }
 
-enum CheckmarkType: String {
+enum MarkType: String {
     case none
     case checkmark
     case xmark
+}
+
+extension Image {
+    func markOverlay() -> some View {
+        self
+            .resizable()
+            .foregroundColor(.white)
+            .transition(.scale.combined(with: .push(from: Bool.random() ? .top : .bottom)).combined(with: .opacity))
+            .fontWeight(.regular)
+            .frame(width: 45, height: 45)
+    }
 }

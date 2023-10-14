@@ -19,7 +19,7 @@ struct GameView: View {
                         }
                     }
                     .buttonStyle(ColorButtonStyle(color: viewModel.colors[index],
-                                                  mark: viewModel.mark(for: index)))
+                                                  mark: viewModel.marks[index]))
                 }
             }
             .navigationTitle("HueHunt")
@@ -27,7 +27,3 @@ struct GameView: View {
         }
     }
 }
-
-//#Preview {
-//    GameView()
-//}
