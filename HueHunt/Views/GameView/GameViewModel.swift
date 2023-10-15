@@ -14,7 +14,8 @@ enum GameDifficulty: Int {
 }
 
 class GameViewModel: ObservableObject {
-    @Published var columns = Array(repeating: GridItem(.flexible(minimum: 75), spacing: 2), count: Config.columns)
+    @Published var columns = Array(repeating: GridItem(.flexible(minimum: 75),
+                                                       spacing: Config.spacing), count: Config.columns)
     @Published var difficulty: GameDifficulty = .easy
     @Published var colors: [Color] = []
     @Published var marks: [MarkType] = Array(repeating: .none, count: Config.cells)

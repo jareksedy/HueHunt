@@ -22,6 +22,8 @@
 		CAF4E51B2ADB00EB008C6BA5 /* IBMPlexSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAF4E5162ADB00EB008C6BA5 /* IBMPlexSans-Bold.ttf */; };
 		CAF4E51C2ADB00EB008C6BA5 /* IBMPlexSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAF4E5172ADB00EB008C6BA5 /* IBMPlexSans-Medium.ttf */; };
 		CAF4E51F2ADB02CC008C6BA5 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF4E51E2ADB02CC008C6BA5 /* Config.swift */; };
+		CAF4E5222ADB80D0008C6BA5 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF4E5212ADB80D0008C6BA5 /* MainTabView.swift */; };
+		CAF4E5262ADB813C008C6BA5 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF4E5252ADB813C008C6BA5 /* StatsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		CAF4E5162ADB00EB008C6BA5 /* IBMPlexSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Bold.ttf"; sourceTree = "<group>"; };
 		CAF4E5172ADB00EB008C6BA5 /* IBMPlexSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Medium.ttf"; sourceTree = "<group>"; };
 		CAF4E51E2ADB02CC008C6BA5 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		CAF4E5212ADB80D0008C6BA5 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		CAF4E5252ADB813C008C6BA5 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,12 +86,12 @@
 		CABF4CA62AD906310010641E /* HueHunt */ = {
 			isa = PBXGroup;
 			children = (
-				CAF4E50A2ADAFE3E008C6BA5 /* Info.plist */,
+				CABF4CA72AD906310010641E /* HueHuntApp.swift */,
+				CABF4CB52AD906BD0010641E /* Views */,
 				CAF4E5202ADB02D8008C6BA5 /* Config */,
 				CAF4E51D2ADB02B0008C6BA5 /* Extensions */,
 				CA3EC0602ADA5094007AB78F /* Styles */,
-				CABF4CB52AD906BD0010641E /* Views */,
-				CABF4CA72AD906310010641E /* HueHuntApp.swift */,
+				CAF4E50A2ADAFE3E008C6BA5 /* Info.plist */,
 				CABF4CAB2AD906320010641E /* Assets.xcassets */,
 				CAF4E5092ADAFE1E008C6BA5 /* Fonts */,
 				CABF4CAD2AD906320010641E /* Preview Content */,
@@ -106,8 +110,9 @@
 		CABF4CB52AD906BD0010641E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CABF4CA92AD906310010641E /* GameView.swift */,
-				CABF4CB62AD907C40010641E /* GameViewModel.swift */,
+				CAF4E5232ADB811E008C6BA5 /* MainTabView */,
+				CAF4E5242ADB812F008C6BA5 /* GameView */,
+				CAF4E5272ADB8141008C6BA5 /* StatsView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,6 +145,31 @@
 				CAF4E51E2ADB02CC008C6BA5 /* Config.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		CAF4E5232ADB811E008C6BA5 /* MainTabView */ = {
+			isa = PBXGroup;
+			children = (
+				CAF4E5212ADB80D0008C6BA5 /* MainTabView.swift */,
+			);
+			path = MainTabView;
+			sourceTree = "<group>";
+		};
+		CAF4E5242ADB812F008C6BA5 /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				CABF4CA92AD906310010641E /* GameView.swift */,
+				CABF4CB62AD907C40010641E /* GameViewModel.swift */,
+			);
+			path = GameView;
+			sourceTree = "<group>";
+		};
+		CAF4E5272ADB8141008C6BA5 /* StatsView */ = {
+			isa = PBXGroup;
+			children = (
+				CAF4E5252ADB813C008C6BA5 /* StatsView.swift */,
+			);
+			path = StatsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +253,8 @@
 				CABF4CB92AD91E090010641E /* Color+Components.swift in Sources */,
 				CAF4E51F2ADB02CC008C6BA5 /* Config.swift in Sources */,
 				CABF4CAA2AD906310010641E /* GameView.swift in Sources */,
+				CAF4E5262ADB813C008C6BA5 /* StatsView.swift in Sources */,
+				CAF4E5222ADB80D0008C6BA5 /* MainTabView.swift in Sources */,
 				CA3EC05F2ADA508E007AB78F /* ButtonStyles.swift in Sources */,
 				CABF4CA82AD906310010641E /* HueHuntApp.swift in Sources */,
 			);

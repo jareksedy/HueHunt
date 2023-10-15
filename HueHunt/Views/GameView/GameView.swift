@@ -11,7 +11,7 @@ struct GameView: View {
     @StateObject var viewModel = GameViewModel()
     var body: some View {
         NavigationStack {
-            LazyVGrid(columns: viewModel.columns, spacing: 2) {
+            LazyVGrid(columns: viewModel.columns, spacing: Config.spacing) {
                 ForEach(0...Config.cells - 1, id: \.self) { index in
                     Button("") {
                         withAnimation(.bouncy(duration: 0.2)) {
@@ -22,9 +22,15 @@ struct GameView: View {
                                                   mark: viewModel.marks[index]))
                 }
             }
-            .padding(14)
-            .navigationTitle("HueHunt")
+            .padding(Config.padding)
+            .navigationTitle("Hue⚡️Hunt")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                Button {
+                } label: {
+                    Image(systemName: "gearshape")
+                }
+            }
         }
     }
 }
