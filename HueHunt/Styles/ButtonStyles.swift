@@ -39,7 +39,7 @@ extension Image {
             .resizable()
             .foregroundColor(.white)
             .transition(.scale.combined(with: .push(from: Bool.random() ? .top : .bottom)).combined(with: .opacity))
-            .fontWeight(.regular)
-            .frame(width: 45, height: 45)
+            .fontWeight(.medium)
+            .frame(width: 35, height: 35)
     }
 }

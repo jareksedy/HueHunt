@@ -14,13 +14,6 @@
 		CABF4CAF2AD906320010641E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CABF4CAE2AD906320010641E /* Preview Assets.xcassets */; };
 		CABF4CB72AD907C40010641E /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF4CB62AD907C40010641E /* GameViewModel.swift */; };
 		CABF4CB92AD91E090010641E /* Color+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF4CB82AD91E090010641E /* Color+Components.swift */; };
-		CAF4E5072ADAFE19008C6BA5 /* TildaSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAF4E5052ADAFE18008C6BA5 /* TildaSans-Medium.ttf */; };
-		CAF4E5082ADAFE19008C6BA5 /* TildaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAF4E5062ADAFE19008C6BA5 /* TildaSans-Bold.ttf */; };
-		CAF4E5182ADB00EB008C6BA5 /* IBMPlexSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAF4E5132ADB00EB008C6BA5 /* IBMPlexSans-Light.ttf */; };
-		CAF4E5192ADB00EB008C6BA5 /* IBMPlexSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAF4E5142ADB00EB008C6BA5 /* IBMPlexSans-SemiBold.ttf */; };
-		CAF4E51A2ADB00EB008C6BA5 /* IBMPlexSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAF4E5152ADB00EB008C6BA5 /* IBMPlexSans-Regular.ttf */; };
-		CAF4E51B2ADB00EB008C6BA5 /* IBMPlexSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAF4E5162ADB00EB008C6BA5 /* IBMPlexSans-Bold.ttf */; };
-		CAF4E51C2ADB00EB008C6BA5 /* IBMPlexSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAF4E5172ADB00EB008C6BA5 /* IBMPlexSans-Medium.ttf */; };
 		CAF4E51F2ADB02CC008C6BA5 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF4E51E2ADB02CC008C6BA5 /* Config.swift */; };
 		CAF4E5222ADB80D0008C6BA5 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF4E5212ADB80D0008C6BA5 /* MainTabView.swift */; };
 		CAF4E5262ADB813C008C6BA5 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF4E5252ADB813C008C6BA5 /* StatsView.swift */; };
@@ -35,14 +28,7 @@
 		CABF4CAE2AD906320010641E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CABF4CB62AD907C40010641E /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		CABF4CB82AD91E090010641E /* Color+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Components.swift"; sourceTree = "<group>"; };
-		CAF4E5052ADAFE18008C6BA5 /* TildaSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TildaSans-Medium.ttf"; sourceTree = "<group>"; };
-		CAF4E5062ADAFE19008C6BA5 /* TildaSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TildaSans-Bold.ttf"; sourceTree = "<group>"; };
 		CAF4E50A2ADAFE3E008C6BA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		CAF4E5132ADB00EB008C6BA5 /* IBMPlexSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Light.ttf"; sourceTree = "<group>"; };
-		CAF4E5142ADB00EB008C6BA5 /* IBMPlexSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-SemiBold.ttf"; sourceTree = "<group>"; };
-		CAF4E5152ADB00EB008C6BA5 /* IBMPlexSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Regular.ttf"; sourceTree = "<group>"; };
-		CAF4E5162ADB00EB008C6BA5 /* IBMPlexSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Bold.ttf"; sourceTree = "<group>"; };
-		CAF4E5172ADB00EB008C6BA5 /* IBMPlexSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Medium.ttf"; sourceTree = "<group>"; };
 		CAF4E51E2ADB02CC008C6BA5 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		CAF4E5212ADB80D0008C6BA5 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		CAF4E5252ADB813C008C6BA5 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
@@ -93,7 +79,6 @@
 				CA3EC0602ADA5094007AB78F /* Styles */,
 				CAF4E50A2ADAFE3E008C6BA5 /* Info.plist */,
 				CABF4CAB2AD906320010641E /* Assets.xcassets */,
-				CAF4E5092ADAFE1E008C6BA5 /* Fonts */,
 				CABF4CAD2AD906320010641E /* Preview Content */,
 			);
 			path = HueHunt;
@@ -115,20 +100,6 @@
 				CAF4E5272ADB8141008C6BA5 /* StatsView */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		CAF4E5092ADAFE1E008C6BA5 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				CAF4E5162ADB00EB008C6BA5 /* IBMPlexSans-Bold.ttf */,
-				CAF4E5132ADB00EB008C6BA5 /* IBMPlexSans-Light.ttf */,
-				CAF4E5172ADB00EB008C6BA5 /* IBMPlexSans-Medium.ttf */,
-				CAF4E5152ADB00EB008C6BA5 /* IBMPlexSans-Regular.ttf */,
-				CAF4E5142ADB00EB008C6BA5 /* IBMPlexSans-SemiBold.ttf */,
-				CAF4E5062ADAFE19008C6BA5 /* TildaSans-Bold.ttf */,
-				CAF4E5052ADAFE18008C6BA5 /* TildaSans-Medium.ttf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		CAF4E51D2ADB02B0008C6BA5 /* Extensions */ = {
@@ -230,15 +201,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAF4E5182ADB00EB008C6BA5 /* IBMPlexSans-Light.ttf in Resources */,
-				CAF4E5192ADB00EB008C6BA5 /* IBMPlexSans-SemiBold.ttf in Resources */,
-				CAF4E5072ADAFE19008C6BA5 /* TildaSans-Medium.ttf in Resources */,
 				CABF4CAF2AD906320010641E /* Preview Assets.xcassets in Resources */,
-				CAF4E51C2ADB00EB008C6BA5 /* IBMPlexSans-Medium.ttf in Resources */,
 				CABF4CAC2AD906320010641E /* Assets.xcassets in Resources */,
-				CAF4E51B2ADB00EB008C6BA5 /* IBMPlexSans-Bold.ttf in Resources */,
-				CAF4E5082ADAFE19008C6BA5 /* TildaSans-Bold.ttf in Resources */,
-				CAF4E51A2ADB00EB008C6BA5 /* IBMPlexSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,12 +16,6 @@ struct StatsView: View {
             .padding(Config.padding)
             .navigationTitle("Stats")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                Button {
-                } label: {
-                    Image(systemName: "info.circle")
-                }
-            }
         }
     }
 }

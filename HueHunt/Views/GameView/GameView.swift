@@ -9,8 +9,11 @@ import SwiftUI
 
 struct GameView: View {
     @StateObject var viewModel = GameViewModel()
+    
     var body: some View {
         NavigationStack {
+            Spacer()
+            
             LazyVGrid(columns: viewModel.columns, spacing: Config.spacing) {
                 ForEach(0...Config.cells - 1, id: \.self) { index in
                     Button("") {
@@ -23,12 +26,12 @@ struct GameView: View {
                 }
             }
             .padding(Config.padding)
-            .navigationTitle("Hue⚡️Hunt")
+            .navigationTitle("HueHunt")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 Button {
                 } label: {
-                    Image(systemName: "gearshape")
+                    Image(systemName: "gearshape.fill")
                 }
             }
         }
