@@ -11,10 +11,25 @@ struct StatsView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section {
+                    Text("Item 1")
+                }.listRowBackground(Color.accentColor.opacity(0.05))
                 
+                Section {
+                    Text("Item 2")
+                    Text("Item 3")
+                    Text("Item 4")
+                }
+                .listRowBackground(Color.accentColor.opacity(0.05))
+                
+                Section {
+                    Text("Item 5")
+                    Text("Item 6")
+                    Text("Item 7")
+                }.listRowBackground(Color.accentColor.opacity(0.05))
             }
-            .padding(Config.padding)
-            .navigationTitle("Game Stats")
+            .scrollContentBackground(.hidden)
+            .navigationTitle("Statistics")
             .navigationBarTitleDisplayMode(.inline)
         }
     }

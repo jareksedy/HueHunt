@@ -19,6 +19,11 @@ class GameViewModel: ObservableObject {
     @Published var difficulty: GameDifficulty = .easy
     @Published var colors: [Color] = []
     @Published var marks: [MarkType] = Array(repeating: .none, count: Config.cells)
+    
+    @Published var health: Int = 3
+    @Published var round: Int = 0
+    
+    @Published var gameStarted: Bool = false
 
     private var randomIndices = (0, 0)
     
@@ -30,7 +35,12 @@ class GameViewModel: ObservableObject {
         colors.filter { $0 == colors[index] }.count > 1
     }
     
+    func generateGrays() {
+        colors = Array(repeating: .gray.opacity(0.25), count: Config.cells)
+    }
+    
     func generateColors(difficulty: GameDifficulty = .easy) {
+        round += 1
         randomIndices = (0, 0)
         marks = Array(repeating: .none, count: Config.cells)
         
@@ -60,24 +70,39 @@ class GameViewModel: ObservableObject {
             randomIndices.1 = .random(in: 0...Config.cells - 1)
         }
         
-        colors = Array(colorSet)
+        colors = Array(colorSet).shuffled()
         colors[randomIndices.0] = colors[randomIndices.1]
     }
     
     func handleUserInput(_ index: Int) {
-        marks[randomIndices.0] = .checkmark
-        marks[randomIndices.1] = .checkmark
-        
-        if !isCorrect(index) {
+        if isCorrect(index) {
+            showCorrectColors()
+            restartRound()
+        } else {
             marks[index] = .xmark
+            health -= 1
         }
         
-        //if isCorrect(index) {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
-                withAnimation(.smooth(duration: 1)) {
-                    self.generateColors()
+        if health <= 0 {
+            showCorrectColors()
+            restartRound(restartGame: true)
+        }
+    }
+    
+    private func showCorrectColors() {
+        marks[randomIndices.0] = .checkmark
+        marks[randomIndices.1] = .checkmark
+    }
+    
+    private func restartRound(restartGame: Bool = false) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+            withAnimation(.smooth(duration: 1)) {
+                self.generateColors()
+                if restartGame { 
+                    self.health = 3
+                    self.round = 1
                 }
             }
-        //}
+        }
     }
 }

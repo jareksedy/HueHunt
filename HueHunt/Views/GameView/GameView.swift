@@ -12,7 +12,28 @@ struct GameView: View {
     
     var body: some View {
         NavigationStack {
+            
             Spacer()
+            
+            HStack {
+                Text("Round: \(viewModel.round)")
+                    .monospacedDigit()
+                    .font(.system(size: 14))
+                    .bold()
+                    .fontDesign(.rounded)
+                    .foregroundColor(.accentColor)
+                
+                Spacer()
+                
+                Text("Health: \(viewModel.health) / 3")
+                    .monospacedDigit()
+                    .font(.system(size: 14))
+                    .bold()
+                    .fontDesign(.rounded)
+                    .foregroundColor(.accentColor)
+                
+            }
+            .padding([.leading, .trailing], Config.padding + 8)
 
             LazyVGrid(columns: viewModel.columns, spacing: Config.spacing) {
                 ForEach(0...Config.cells - 1, id: \.self) { index in
@@ -37,7 +58,6 @@ struct GameView: View {
         }
     }
 }
-
 
 #Preview {
     MainTabView()

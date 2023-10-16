@@ -15,6 +15,10 @@ struct MainTabView: View {
         [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .bold).rounded(),
          NSAttributedString.Key.foregroundColor: UIColor.systemIndigo]
         
+        UINavigationBar.appearance().largeTitleTextAttributes =
+        [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 36, weight: .bold).rounded(),
+         NSAttributedString.Key.foregroundColor: UIColor.systemIndigo]
+        
         UITabBarItem
             .appearance()
             .setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .bold).rounded()],
