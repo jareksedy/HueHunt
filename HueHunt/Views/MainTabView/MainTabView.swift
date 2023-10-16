@@ -12,12 +12,12 @@ struct MainTabView: View {
     
     init() {
         UINavigationBar.appearance().titleTextAttributes =
-        [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .bold).rounded(),
+        [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .bold).rounded(),
          NSAttributedString.Key.foregroundColor: UIColor.systemIndigo]
         
         UITabBarItem
             .appearance()
-            .setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 11, weight: .bold).rounded()],
+            .setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .bold).rounded()],
                                     for: .normal)
     }
     
@@ -47,15 +47,5 @@ struct MainTabView: View {
                 }
                 .tag(1)
         }
-    }
-}
-
-extension UIFont {
-    func rounded() -> UIFont {
-        guard let descriptor = fontDescriptor.withDesign(.rounded) else {
-            return self
-        }
-
-        return UIFont(descriptor: descriptor, size: pointSize)
     }
 }

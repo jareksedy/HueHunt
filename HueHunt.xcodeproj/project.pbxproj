@@ -14,9 +14,11 @@
 		CABF4CAF2AD906320010641E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CABF4CAE2AD906320010641E /* Preview Assets.xcassets */; };
 		CABF4CB72AD907C40010641E /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF4CB62AD907C40010641E /* GameViewModel.swift */; };
 		CABF4CB92AD91E090010641E /* Color+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF4CB82AD91E090010641E /* Color+Components.swift */; };
+		CAE668E72ADD017E005FF570 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE668E62ADD017E005FF570 /* ScoreView.swift */; };
 		CAF4E51F2ADB02CC008C6BA5 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF4E51E2ADB02CC008C6BA5 /* Config.swift */; };
 		CAF4E5222ADB80D0008C6BA5 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF4E5212ADB80D0008C6BA5 /* MainTabView.swift */; };
 		CAF4E5262ADB813C008C6BA5 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF4E5252ADB813C008C6BA5 /* StatsView.swift */; };
+		CAF4E52B2ADBCFCF008C6BA5 /* UIFont+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF4E52A2ADBCFCF008C6BA5 /* UIFont+Rounded.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +30,12 @@
 		CABF4CAE2AD906320010641E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CABF4CB62AD907C40010641E /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		CABF4CB82AD91E090010641E /* Color+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Components.swift"; sourceTree = "<group>"; };
+		CAE668E62ADD017E005FF570 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		CAF4E50A2ADAFE3E008C6BA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CAF4E51E2ADB02CC008C6BA5 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		CAF4E5212ADB80D0008C6BA5 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		CAF4E5252ADB813C008C6BA5 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		CAF4E52A2ADBCFCF008C6BA5 /* UIFont+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Rounded.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		CABF4C9B2AD906310010641E = {
 			isa = PBXGroup;
 			children = (
+				CAE668E62ADD017E005FF570 /* ScoreView.swift */,
 				CABF4CA62AD906310010641E /* HueHunt */,
 				CABF4CA52AD906310010641E /* Products */,
 			);
@@ -106,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				CABF4CB82AD91E090010641E /* Color+Components.swift */,
+				CAF4E52A2ADBCFCF008C6BA5 /* UIFont+Rounded.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -220,7 +226,9 @@
 				CAF4E5262ADB813C008C6BA5 /* StatsView.swift in Sources */,
 				CAF4E5222ADB80D0008C6BA5 /* MainTabView.swift in Sources */,
 				CA3EC05F2ADA508E007AB78F /* ButtonStyles.swift in Sources */,
+				CAF4E52B2ADBCFCF008C6BA5 /* UIFont+Rounded.swift in Sources */,
 				CABF4CA82AD906310010641E /* HueHuntApp.swift in Sources */,
+				CAE668E72ADD017E005FF570 /* ScoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,8 +369,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -370,6 +378,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jareksedy.HueHunt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -391,8 +402,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -400,6 +411,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jareksedy.HueHunt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

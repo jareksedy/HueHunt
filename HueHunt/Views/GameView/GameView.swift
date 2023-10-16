@@ -13,7 +13,7 @@ struct GameView: View {
     var body: some View {
         NavigationStack {
             Spacer()
-            
+
             LazyVGrid(columns: viewModel.columns, spacing: Config.spacing) {
                 ForEach(0...Config.cells - 1, id: \.self) { index in
                     Button("") {
@@ -26,7 +26,7 @@ struct GameView: View {
                 }
             }
             .padding(Config.padding)
-            .navigationTitle("HueHunt")
+            .navigationTitle("Hue Hunt")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 Button {
@@ -36,4 +36,9 @@ struct GameView: View {
             }
         }
     }
+}
+
+
+#Preview {
+    MainTabView()
 }

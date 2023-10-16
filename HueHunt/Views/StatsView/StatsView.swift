@@ -14,7 +14,7 @@ struct StatsView: View {
                 
             }
             .padding(Config.padding)
-            .navigationTitle("Stats")
+            .navigationTitle("Game Stats")
             .navigationBarTitleDisplayMode(.inline)
         }
     }
