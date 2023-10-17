@@ -9,7 +9,7 @@ import SwiftUI
 
 enum Config {
     static let padding: CGFloat = 18
-    static let spacing: CGFloat = 4
+    static let spacing: CGFloat = 2
     
     static let columns: Int = 3
     static let rows: Int = 4

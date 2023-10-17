@@ -13,23 +13,23 @@ struct StatsView: View {
             List {
                 Section {
                     Text("Item 1")
-                }.listRowBackground(Color.accentColor.opacity(0.05))
+                }
                 
                 Section {
                     Text("Item 2")
                     Text("Item 3")
                     Text("Item 4")
                 }
-                .listRowBackground(Color.accentColor.opacity(0.05))
                 
                 Section {
                     Text("Item 5")
                     Text("Item 6")
                     Text("Item 7")
-                }.listRowBackground(Color.accentColor.opacity(0.05))
+                }
             }
             .scrollContentBackground(.hidden)
-            .navigationTitle("Statistics")
+            .background(Color.accentColor.opacity(0.1))
+            .navigationTitle("Stats")
             .navigationBarTitleDisplayMode(.inline)
         }
     }

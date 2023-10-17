@@ -22,9 +22,10 @@ class GameViewModel: ObservableObject {
     
     @Published var health: Int = 3
     @Published var round: Int = 0
-    
-    @Published var gameStarted: Bool = false
 
+    @Published var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @Published var startDate = Date.now
+    
     private var randomIndices = (0, 0)
     
     init() {
@@ -33,10 +34,6 @@ class GameViewModel: ObservableObject {
     
     func isCorrect(_ index: Int) -> Bool {
         colors.filter { $0 == colors[index] }.count > 1
-    }
-    
-    func generateGrays() {
-        colors = Array(repeating: .gray.opacity(0.25), count: Config.cells)
     }
     
     func generateColors(difficulty: GameDifficulty = .easy) {
@@ -76,14 +73,17 @@ class GameViewModel: ObservableObject {
     
     func handleUserInput(_ index: Int) {
         if isCorrect(index) {
+            play(.light)
             showCorrectColors()
             restartRound()
         } else {
             marks[index] = .xmark
             health -= 1
+            if health > 0 { play(.heavy) }
         }
         
         if health <= 0 {
+            notify(.error)
             showCorrectColors()
             restartRound(restartGame: true)
         }
@@ -98,11 +98,23 @@ class GameViewModel: ObservableObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
             withAnimation(.smooth(duration: 1)) {
                 self.generateColors()
-                if restartGame { 
+                
+                if restartGame {
                     self.health = 3
                     self.round = 1
+                    self.startDate = Date.now
                 }
             }
         }
+    }
+}
+
+private extension GameViewModel {
+    func play(_ feedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle) {
+        UIImpactFeedbackGenerator(style: feedbackStyle).impactOccurred()
+    }
+    
+    func notify(_ feedbackType: UINotificationFeedbackGenerator.FeedbackType) {
+        UINotificationFeedbackGenerator().notificationOccurred(feedbackType)
     }
 }
