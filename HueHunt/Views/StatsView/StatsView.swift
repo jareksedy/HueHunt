@@ -28,7 +28,7 @@ struct StatsView: View {
                 }
             }
             .scrollContentBackground(.hidden)
-            .background(Color.accentColor.opacity(0.1))
+            .background(Color.indigoLight)
             .navigationTitle("Stats")
             .navigationBarTitleDisplayMode(.inline)
         }

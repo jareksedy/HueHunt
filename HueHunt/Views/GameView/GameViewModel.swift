@@ -41,7 +41,7 @@ class GameViewModel: ObservableObject {
         randomIndices = (0, 0)
         marks = Array(repeating: .none, count: Config.cells)
         
-        let baseColor = Color(red: .random(in: 0...0.05), green: .random(in: 0...0.05), blue: .random(in: 0...0.05))
+        let baseColor = Color(red: .random(in: 0...0.01), green: .random(in: 0...0.01), blue: .random(in: 0...0.01))
         var colorSet = Set<Color>()
         var step = 0.0
         var stepValue: CGFloat {
@@ -53,9 +53,9 @@ class GameViewModel: ObservableObject {
         }
         
         while colorSet.count < Config.cells {
-            let tempColor = Color(red: baseColor.components.red + step + .random(in: 0...0.4),
-                                  green: baseColor.components.green + step + .random(in: 0...0.4),
-                                  blue: baseColor.components.blue + step + .random(in: 0...0.4)
+            let tempColor = Color(red: baseColor.components.red + step + .random(in: 0...0.3),
+                                  green: baseColor.components.green + step + .random(in: 0...0.3),
+                                  blue: baseColor.components.blue + step + .random(in: 0...0.3)
             )
             
             step += stepValue
@@ -73,17 +73,17 @@ class GameViewModel: ObservableObject {
     
     func handleUserInput(_ index: Int) {
         if isCorrect(index) {
-            play(.light)
+            Haptics.shared.play(.rigid)
             showCorrectColors()
             restartRound()
         } else {
             marks[index] = .xmark
             health -= 1
-            if health > 0 { play(.heavy) }
+            if health > 0 { Haptics.shared.play(.heavy) }
         }
         
         if health <= 0 {
-            notify(.error)
+            Haptics.shared.notify(.error)
             showCorrectColors()
             restartRound(restartGame: true)
         }
@@ -106,15 +106,5 @@ class GameViewModel: ObservableObject {
                 }
             }
         }
-    }
-}
-
-private extension GameViewModel {
-    func play(_ feedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle) {
-        UIImpactFeedbackGenerator(style: feedbackStyle).impactOccurred()
-    }
-    
-    func notify(_ feedbackType: UINotificationFeedbackGenerator.FeedbackType) {
-        UINotificationFeedbackGenerator().notificationOccurred(feedbackType)
     }
 }

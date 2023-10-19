@@ -17,7 +17,7 @@ struct ColorButtonStyle: ButtonStyle {
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             .aspectRatio(1, contentMode: .fill)
             .background(color)
-            .clipShape(RoundedRectangle(cornerRadius: configuration.isPressed ? 24 : 12))
+            .clipShape(RoundedRectangle(cornerRadius: configuration.isPressed ? 18 : 10))
             //.id(UUID())
             //.transition(.scale(scale: 0.5).combined(with: .opacity))
             .scaleEffect(configuration.isPressed ? 0.75 : 1)
@@ -37,8 +37,9 @@ extension Image {
     func markOverlay() -> some View {
         self
             .resizable()
-            .foregroundColor(.white)
-            .transition(.scale.combined(with: .push(from: Bool.random() ? .top : .bottom)).combined(with: .opacity))
+            .foregroundColor(.indigoLight)
+            //.transition(.scale.combined(with: .push(from: Bool.random() ? .top : .bottom)).combined(with: .opacity))
+            .transition(.scale.combined(with: .opacity))
             .fontWeight(.medium)
             .frame(width: 35, height: 35)
     }

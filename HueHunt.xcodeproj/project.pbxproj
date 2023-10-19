@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA0BF1D52AE02E0B00BAC633 /* Pantone.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0BF1D42AE02E0B00BAC633 /* Pantone.swift */; };
+		CA0BF1DA2AE0DA7400BAC633 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0BF1D92AE0DA7400BAC633 /* ScoreView.swift */; };
 		CA3EC05F2ADA508E007AB78F /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3EC05E2ADA508E007AB78F /* ButtonStyles.swift */; };
+		CA625F652ADF86AA00EE8D1C /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA625F642ADF86AA00EE8D1C /* Haptics.swift */; };
 		CABF4CA82AD906310010641E /* HueHuntApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF4CA72AD906310010641E /* HueHuntApp.swift */; };
 		CABF4CAA2AD906310010641E /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF4CA92AD906310010641E /* GameView.swift */; };
 		CABF4CAC2AD906320010641E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CABF4CAB2AD906320010641E /* Assets.xcassets */; };
 		CABF4CAF2AD906320010641E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CABF4CAE2AD906320010641E /* Preview Assets.xcassets */; };
 		CABF4CB72AD907C40010641E /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF4CB62AD907C40010641E /* GameViewModel.swift */; };
-		CABF4CB92AD91E090010641E /* Color+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF4CB82AD91E090010641E /* Color+Components.swift */; };
-		CAE668E72ADD017E005FF570 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE668E62ADD017E005FF570 /* ScoreView.swift */; };
+		CABF4CB92AD91E090010641E /* Color+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF4CB82AD91E090010641E /* Color+Extras.swift */; };
 		CAF4E51F2ADB02CC008C6BA5 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF4E51E2ADB02CC008C6BA5 /* Config.swift */; };
 		CAF4E5222ADB80D0008C6BA5 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF4E5212ADB80D0008C6BA5 /* MainTabView.swift */; };
 		CAF4E5262ADB813C008C6BA5 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF4E5252ADB813C008C6BA5 /* StatsView.swift */; };
@@ -22,15 +24,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA0BF1D42AE02E0B00BAC633 /* Pantone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pantone.swift; sourceTree = "<group>"; };
+		CA0BF1D92AE0DA7400BAC633 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		CA3EC05E2ADA508E007AB78F /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		CA625F642ADF86AA00EE8D1C /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		CABF4CA42AD906310010641E /* HueHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HueHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABF4CA72AD906310010641E /* HueHuntApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueHuntApp.swift; sourceTree = "<group>"; };
 		CABF4CA92AD906310010641E /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		CABF4CAB2AD906320010641E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CABF4CAE2AD906320010641E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CABF4CB62AD907C40010641E /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
-		CABF4CB82AD91E090010641E /* Color+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Components.swift"; sourceTree = "<group>"; };
-		CAE668E62ADD017E005FF570 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		CABF4CB82AD91E090010641E /* Color+Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extras.swift"; sourceTree = "<group>"; };
 		CAF4E50A2ADAFE3E008C6BA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CAF4E51E2ADB02CC008C6BA5 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		CAF4E5212ADB80D0008C6BA5 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -57,10 +61,18 @@
 			path = Styles;
 			sourceTree = "<group>";
 		};
+		CA625F662ADF86C700EE8D1C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CA625F642ADF86AA00EE8D1C /* Haptics.swift */,
+				CA0BF1D42AE02E0B00BAC633 /* Pantone.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		CABF4C9B2AD906310010641E = {
 			isa = PBXGroup;
 			children = (
-				CAE668E62ADD017E005FF570 /* ScoreView.swift */,
 				CABF4CA62AD906310010641E /* HueHunt */,
 				CABF4CA52AD906310010641E /* Products */,
 			);
@@ -80,6 +92,7 @@
 				CABF4CA72AD906310010641E /* HueHuntApp.swift */,
 				CABF4CB52AD906BD0010641E /* Views */,
 				CAF4E5202ADB02D8008C6BA5 /* Config */,
+				CA625F662ADF86C700EE8D1C /* Helpers */,
 				CAF4E51D2ADB02B0008C6BA5 /* Extensions */,
 				CA3EC0602ADA5094007AB78F /* Styles */,
 				CAF4E50A2ADAFE3E008C6BA5 /* Info.plist */,
@@ -110,7 +123,7 @@
 		CAF4E51D2ADB02B0008C6BA5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				CABF4CB82AD91E090010641E /* Color+Components.swift */,
+				CABF4CB82AD91E090010641E /* Color+Extras.swift */,
 				CAF4E52A2ADBCFCF008C6BA5 /* UIFont+Rounded.swift */,
 			);
 			path = Extensions;
@@ -136,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				CABF4CA92AD906310010641E /* GameView.swift */,
+				CA0BF1D92AE0DA7400BAC633 /* ScoreView.swift */,
 				CABF4CB62AD907C40010641E /* GameViewModel.swift */,
 			);
 			path = GameView;
@@ -219,16 +233,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA0BF1D52AE02E0B00BAC633 /* Pantone.swift in Sources */,
 				CABF4CB72AD907C40010641E /* GameViewModel.swift in Sources */,
-				CABF4CB92AD91E090010641E /* Color+Components.swift in Sources */,
+				CABF4CB92AD91E090010641E /* Color+Extras.swift in Sources */,
+				CA625F652ADF86AA00EE8D1C /* Haptics.swift in Sources */,
 				CAF4E51F2ADB02CC008C6BA5 /* Config.swift in Sources */,
+				CA0BF1DA2AE0DA7400BAC633 /* ScoreView.swift in Sources */,
 				CABF4CAA2AD906310010641E /* GameView.swift in Sources */,
 				CAF4E5262ADB813C008C6BA5 /* StatsView.swift in Sources */,
 				CAF4E5222ADB80D0008C6BA5 /* MainTabView.swift in Sources */,
 				CA3EC05F2ADA508E007AB78F /* ButtonStyles.swift in Sources */,
 				CAF4E52B2ADBCFCF008C6BA5 /* UIFont+Rounded.swift in Sources */,
 				CABF4CA82AD906310010641E /* HueHuntApp.swift in Sources */,
-				CAE668E72ADD017E005FF570 /* ScoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
