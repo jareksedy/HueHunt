@@ -11,6 +11,8 @@
 		CA0BF1DA2AE0DA7400BAC633 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0BF1D92AE0DA7400BAC633 /* ScoreView.swift */; };
 		CA3EC05F2ADA508E007AB78F /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3EC05E2ADA508E007AB78F /* ButtonStyles.swift */; };
 		CA625F652ADF86AA00EE8D1C /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA625F642ADF86AA00EE8D1C /* Haptics.swift */; };
+		CAB3281D2AE22474009A35A4 /* ChatBubbleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB3281C2AE22474009A35A4 /* ChatBubbleShape.swift */; };
+		CAB328202AE22519009A35A4 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB3281F2AE22519009A35A4 /* ChatBubble.swift */; };
 		CABF4CA82AD906310010641E /* HueHuntApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF4CA72AD906310010641E /* HueHuntApp.swift */; };
 		CABF4CAA2AD906310010641E /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF4CA92AD906310010641E /* GameView.swift */; };
 		CABF4CAC2AD906320010641E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CABF4CAB2AD906320010641E /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		CA0BF1D92AE0DA7400BAC633 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		CA3EC05E2ADA508E007AB78F /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		CA625F642ADF86AA00EE8D1C /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		CAB3281C2AE22474009A35A4 /* ChatBubbleShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleShape.swift; sourceTree = "<group>"; };
+		CAB3281F2AE22519009A35A4 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		CABF4CA42AD906310010641E /* HueHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HueHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABF4CA72AD906310010641E /* HueHuntApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueHuntApp.swift; sourceTree = "<group>"; };
 		CABF4CA92AD906310010641E /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -68,6 +72,15 @@
 				CA0BF1D42AE02E0B00BAC633 /* Pantone.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CAB3281E2AE2247C009A35A4 /* ChatBubbleView */ = {
+			isa = PBXGroup;
+			children = (
+				CAB3281C2AE22474009A35A4 /* ChatBubbleShape.swift */,
+				CAB3281F2AE22519009A35A4 /* ChatBubble.swift */,
+			);
+			path = ChatBubbleView;
 			sourceTree = "<group>";
 		};
 		CABF4C9B2AD906310010641E = {
@@ -113,6 +126,7 @@
 		CABF4CB52AD906BD0010641E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CAB3281E2AE2247C009A35A4 /* ChatBubbleView */,
 				CAF4E5232ADB811E008C6BA5 /* MainTabView */,
 				CAF4E5242ADB812F008C6BA5 /* GameView */,
 				CAF4E5272ADB8141008C6BA5 /* StatsView */,
@@ -234,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA0BF1D52AE02E0B00BAC633 /* Pantone.swift in Sources */,
+				CAB3281D2AE22474009A35A4 /* ChatBubbleShape.swift in Sources */,
 				CABF4CB72AD907C40010641E /* GameViewModel.swift in Sources */,
 				CABF4CB92AD91E090010641E /* Color+Extras.swift in Sources */,
 				CA625F652ADF86AA00EE8D1C /* Haptics.swift in Sources */,
@@ -245,6 +260,7 @@
 				CA3EC05F2ADA508E007AB78F /* ButtonStyles.swift in Sources */,
 				CAF4E52B2ADBCFCF008C6BA5 /* UIFont+Rounded.swift in Sources */,
 				CABF4CA82AD906310010641E /* HueHuntApp.swift in Sources */,
+				CAB328202AE22519009A35A4 /* ChatBubble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

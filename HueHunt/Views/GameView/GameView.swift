@@ -14,23 +14,29 @@ struct GameView: View {
         NavigationStack {
             VStack {
                 Spacer()
-                    .frame(maxHeight: 50)
+                    .frame(maxHeight: 35)
                 
-                HStack {
-                    Text("Find duplicate colors 🎨 in the shortest possible time")
-                        .font(.system(size: 18, weight: .bold))
-                        .bold()
-                        .fontDesign(.rounded)
-                        .foregroundStyle(LinearGradient(colors: [.accentColor, .green], startPoint: .leading, endPoint: .trailing))
+                VStack {
+                    Spacer()
+                    HStack {
+                        Text("Find duplicate colors 🎨 in the shortest possible time")
+                            .font(.system(size: 18, weight: .bold))
+                            .bold()
+                            .fontDesign(.rounded)
+                            .foregroundStyle(LinearGradient(colors: [.accentColor, .green], startPoint: .leading, endPoint: .trailing))
+                        
+                        Spacer()
+                    }
+                    .padding(25)
                     
                     Spacer()
                 }
-                .padding(25)
                 .background(.white)
                 .cornerRadius(10)
                 .padding([.leading, .trailing], Config.padding)
                 
                 Spacer()
+                    .frame(maxHeight: 75)
                 
                 ScoreView(round: viewModel.round, health: viewModel.health, startDate: viewModel.startDate)
                 
@@ -54,8 +60,6 @@ struct GameView: View {
                         Image(systemName: "gearshape.fill")
                     }
                 }
-                
-                Spacer()
             }
             .background(Color.indigoLight.ignoresSafeArea())
         }
