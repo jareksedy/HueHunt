@@ -29,7 +29,7 @@ struct StatsView: View {
             }
             .scrollContentBackground(.hidden)
             .background(Color.indigoLight)
-            .navigationTitle("Stats")
+            .navigationTitle("Game Stats")
             .navigationBarTitleDisplayMode(.inline)
         }
     }

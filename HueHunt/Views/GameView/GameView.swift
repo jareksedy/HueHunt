@@ -14,36 +14,38 @@ struct GameView: View {
         NavigationStack {
             VStack {
                 Spacer()
-                    .frame(maxHeight: 35)
                 
-                VStack {
-                    Spacer()
-                    HStack {
-                        Text("Find duplicate colors 🎨 in the shortest possible time")
-                            .font(.system(size: 18, weight: .bold))
-                            .bold()
-                            .fontDesign(.rounded)
-                            .foregroundStyle(LinearGradient(colors: [.accentColor, .green], startPoint: .leading, endPoint: .trailing))
-                        
-                        Spacer()
-                    }
-                    .padding(25)
+                HStack {
+                    Text("Find duplicate colors 🎨 in the shortest possible time.")
+                        .font(.system(size: 18, weight: .bold))
+                        .bold()
+                        .fontDesign(.rounded)
+                        .foregroundStyle(LinearGradient(colors: [.accentColor, .green], startPoint: .leading, endPoint: .trailing))
+                        .padding([.leading, .trailing], 25)
+                        .padding([.top, .bottom], 25)
                     
                     Spacer()
                 }
                 .background(.white)
                 .cornerRadius(10)
                 .padding([.leading, .trailing], Config.padding)
+                .background(
+                    Image(systemName: "rhombus.fill")
+                        .foregroundColor(.white)
+                        .font(.system(size: 36))
+                        .offset(x: -50, y: 15)
+                    , alignment: .bottomTrailing
+                )
                 
+            
                 Spacer()
-                    .frame(maxHeight: 75)
                 
                 ScoreView(round: viewModel.round, health: viewModel.health, startDate: viewModel.startDate)
-                
+
                 LazyVGrid(columns: viewModel.columns, spacing: Config.spacing) {
                     ForEach(0...Config.cells - 1, id: \.self) { index in
                         Button("") {
-                            withAnimation(.bouncy(duration: 0.2)) {
+                            withAnimation(.bouncy(duration: 0.5)) {
                                 viewModel.handleUserInput(index)
                             }
                         }

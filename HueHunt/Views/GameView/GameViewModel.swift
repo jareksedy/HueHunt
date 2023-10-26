@@ -14,15 +14,14 @@ enum GameDifficulty: Int {
 }
 
 class GameViewModel: ObservableObject {
-    @Published var columns = Array(repeating: GridItem(.flexible(minimum: 75),
-                                                       spacing: Config.spacing), count: Config.columns)
+    @Published var columns = Array(repeating: GridItem(.flexible(minimum: 75), spacing: Config.spacing), count: Config.columns)
     @Published var difficulty: GameDifficulty = .easy
     @Published var colors: [Color] = []
     @Published var marks: [MarkType] = Array(repeating: .none, count: Config.cells)
     
     @Published var health: Int = 3
     @Published var round: Int = 0
-
+    
     @Published var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @Published var startDate = Date.now
     
@@ -44,6 +43,7 @@ class GameViewModel: ObservableObject {
         let baseColor = Color(red: .random(in: 0...0.01), green: .random(in: 0...0.01), blue: .random(in: 0...0.01))
         var colorSet = Set<Color>()
         var step = 0.0
+        
         var stepValue: CGFloat {
             switch difficulty {
             case .easy: return 0.04
@@ -72,6 +72,8 @@ class GameViewModel: ObservableObject {
     }
     
     func handleUserInput(_ index: Int) {
+        guard marks[index] == .none else { return }
+        
         if isCorrect(index) {
             Haptics.shared.play(.rigid)
             showCorrectColors()

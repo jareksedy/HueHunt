@@ -11,7 +11,7 @@ enum Config {
     static let padding: CGFloat = 20
     static let spacing: CGFloat = 2
     
-    static let columns: Int = 4
-    static let rows: Int = 4
+    static var columns: Int = 4
+    static var rows: Int = 4
     static let cells: Int = columns * rows
 }

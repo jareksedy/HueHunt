@@ -17,7 +17,7 @@ struct ColorButtonStyle: ButtonStyle {
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             .aspectRatio(1, contentMode: .fill)
             .background(color)
-            .clipShape(RoundedRectangle(cornerRadius: configuration.isPressed ? 18 : 10))
+            .clipShape(RoundedRectangle(cornerRadius: configuration.isPressed ? 24 : 10))
             //.id(UUID())
             //.transition(.scale(scale: 0.5).combined(with: .opacity))
             .scaleEffect(configuration.isPressed ? 0.75 : 1)
