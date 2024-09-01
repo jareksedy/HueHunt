@@ -23,4 +23,12 @@ extension Color {
         
         return (r, g, b, a)
     }
+    
+    static func random(in range: ClosedRange<Double>) -> Color {
+        return Color(
+            red: .random(in: range),
+            green: .random(in: range),
+            blue: .random(in: range)
+        )
+    }
 }

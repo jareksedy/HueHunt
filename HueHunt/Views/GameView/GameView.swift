@@ -16,7 +16,8 @@ struct GameView: View {
                 Spacer()
                 
                 HStack {
-                    Text("Find duplicate colors 🎨 in the shortest possible time.")
+                    Text("Spot duplicate colors 🎨 in the shortest possible time")
+                        .lineSpacing(4)
                         .font(.system(size: 18, weight: .bold))
                         .bold()
                         .fontDesign(.rounded)
@@ -27,7 +28,7 @@ struct GameView: View {
                     Spacer()
                 }
                 .background(.white)
-                .cornerRadius(10)
+                .cornerRadius(Config.cornerRadius)
                 .padding([.leading, .trailing], Config.padding)
                 .background(
                     Image(systemName: "rhombus.fill")
@@ -39,18 +40,26 @@ struct GameView: View {
                 
             
                 Spacer()
+                    .frame(height: 50)
                 
                 ScoreView(round: viewModel.round, health: viewModel.health, startDate: viewModel.startDate)
 
-                LazyVGrid(columns: viewModel.columns, spacing: Config.spacing) {
+                LazyVGrid(
+                    columns: viewModel.columns,
+                    spacing: Config.spacing
+                ) {
                     ForEach(0...Config.cells - 1, id: \.self) { index in
                         Button("") {
                             withAnimation(.bouncy(duration: 0.5)) {
                                 viewModel.handleUserInput(index)
                             }
                         }
-                        .buttonStyle(ColorButtonStyle(color: viewModel.colors[index],
-                                                      mark: viewModel.marks[index]))
+                        .buttonStyle(
+                            ColorButtonStyle(
+                                color: viewModel.colors[index],
+                                mark: viewModel.marks[index]
+                            )
+                        )
                     }
                 }
                 .padding(Config.padding)

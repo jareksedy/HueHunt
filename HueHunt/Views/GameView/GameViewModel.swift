@@ -14,7 +14,7 @@ enum GameDifficulty: Int {
 }
 
 class GameViewModel: ObservableObject {
-    @Published var columns = Array(repeating: GridItem(.flexible(minimum: 75), spacing: Config.spacing), count: Config.columns)
+    @Published var columns = Array(repeating: GridItem(.flexible(minimum: 5), spacing: Config.spacing), count: Config.columns)
     @Published var difficulty: GameDifficulty = .easy
     @Published var colors: [Color] = []
     @Published var marks: [MarkType] = Array(repeating: .none, count: Config.cells)
@@ -40,25 +40,17 @@ class GameViewModel: ObservableObject {
         randomIndices = (0, 0)
         marks = Array(repeating: .none, count: Config.cells)
         
-        let baseColor = Color(red: .random(in: 0...0.01), green: .random(in: 0...0.01), blue: .random(in: 0...0.01))
         var colorSet = Set<Color>()
-        var step = 0.0
+        let colorRange: ClosedRange<Double>
         
-        var stepValue: CGFloat {
-            switch difficulty {
-            case .easy: return 0.04
-            case .medium: return 0.03
-            case .hard: return 0.02
-            }
+        switch difficulty {
+        case .easy: colorRange = 0.1...0.9 // Wide range, very different colors
+        case .medium: colorRange = 0.2...0.8 // Medium range, more similar colors
+        case .hard: colorRange = 0.4...0.6 // Narrow range, very similar colors
         }
         
         while colorSet.count < Config.cells {
-            let tempColor = Color(red: baseColor.components.red + step + .random(in: 0...0.3),
-                                  green: baseColor.components.green + step + .random(in: 0...0.3),
-                                  blue: baseColor.components.blue + step + .random(in: 0...0.3)
-            )
-            
-            step += stepValue
+            let tempColor = Color.random(in: colorRange)
             colorSet.insert(tempColor)
         }
         

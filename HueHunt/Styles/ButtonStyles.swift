@@ -17,13 +17,26 @@ struct ColorButtonStyle: ButtonStyle {
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             .aspectRatio(1, contentMode: .fill)
             .background(color)
-            .clipShape(RoundedRectangle(cornerRadius: configuration.isPressed ? 24 : 10))
-            //.id(UUID())
-            //.transition(.scale(scale: 0.5).combined(with: .opacity))
-            .scaleEffect(configuration.isPressed ? 0.75 : 1)
-            .overlay(mark == .checkmark ? Image(systemName: "checkmark").markOverlay() : nil)
-            .overlay(mark == .xmark ? Image(systemName: "xmark").markOverlay() : nil)
-        
+            .clipShape(RoundedRectangle(cornerRadius: Config.cornerRadius))
+            .scaleEffect(configuration.isPressed ? 0.95 : 1)
+            .overlay(markOverlay(for: mark))
+    }
+    
+    @ViewBuilder
+    private func markOverlay(for mark: MarkType) -> some View {
+        GeometryReader { geometry in
+            ZStack {
+                if mark == .checkmark {
+                    Image(systemName: "checkmark")
+                        .markOverlay(size: geometry.size)
+                } else if mark == .xmark {
+                    Image(systemName: "xmark")
+                        .markOverlay(size: geometry.size)
+                }
+            }
+            .frame(width: geometry.size.width, height: geometry.size.height)
+            .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
+        }
     }
 }
 
@@ -34,13 +47,12 @@ enum MarkType: String {
 }
 
 extension Image {
-    func markOverlay() -> some View {
+    func markOverlay(size: CGSize) -> some View {
         self
             .resizable()
             .foregroundColor(.indigoLight)
-            //.transition(.scale.combined(with: .push(from: Bool.random() ? .top : .bottom)).combined(with: .opacity))
             .transition(.scale.combined(with: .opacity))
-            .fontWeight(.medium)
-            .frame(width: 35, height: 35)
+            .fontWeight(.bold)
+            .frame(width: size.width * 0.25, height: size.width * 0.25)
     }
 }
